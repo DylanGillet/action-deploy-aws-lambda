@@ -40,3 +40,14 @@ runs:
       shell: bash
     - run: deploy-lambda.sh
       shell: bash
+      env:
+        INPUT_FUNCTION_NAME: "${{ inputs.function_name }}"
+        INPUT_WORKING_DIRECTORY: "${{ inputs.working_directory }}"
+        INPUT_RUNTIME: "${{ inputs.runtime }}"
+        INPUT_ROLE: "${{ inputs.role }}"
+        INPUT_HANDLER: "${{ inputs.handler }}"
+        INPUT_MEMORY: "${{ inputs.memory }}"
+        INPUT_TIMEOUT: "${{ inputs.timeout }}"
+        INPUT_ENV_VARIABLES: "${{ inputs.env_variables }}"
+        INPUT_VPC_CONFIG: "${{ inputs.vpc_config }}"
+        INPUT_LAYERS: "${{ inputs.layers }}"
