@@ -36,5 +36,7 @@ inputs:
 runs:
   using: "composite"
   steps:
+    - run: echo "${{ github.action_path }}" >> $GITHUB_PATH
+      shell: bash
     - run: deploy-lambda.sh
       shell: bash
