@@ -1,6 +1,6 @@
 name: Deploy Python Code to AWS Lambda
 author: dpo
-description: Deploy python 3.8 code to AWS Lambda, lightning quick builds!
+description: Deploy python code to AWS Lambda
 inputs:
   function_name:
     description: the Lambda function name
@@ -30,22 +30,10 @@ inputs:
     description: VPC configuration in the format SubnetIds=string,string,SecurityGroupIds=string,string
     required: false
   layers:
-    description: Lambda layers ARN 
+    description: Lambda layers ARN
     required: false
 
 runs:
-  using: "docker"
-  image: "Dockerfile"
-  args:
-    - ${{ inputs.function_name }}
-    - ${{ inputs.working_directory }}
-    - ${{ inputs.runtime }}
-    - ${{ inputs.role }}
-    - ${{ inputs.handler }}
-    - ${{ inputs.layers }}
-    - ${{ inputs.memory }}
-    - ${{ inputs.timeout }}
-    - ${{ inputs.env_variables }}
-branding:
-  icon: "cloud-lightning"
-  color: "orange"
+  using: "composite"
+  steps:
+    - run: deploy-lambda.sh
