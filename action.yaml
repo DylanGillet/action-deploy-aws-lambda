@@ -37,3 +37,4 @@ runs:
   using: "composite"
   steps:
     - run: deploy-lambda.sh
+      shell: bash
