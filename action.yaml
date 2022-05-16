@@ -1,5 +1,5 @@
 name: Deploy Python Code to AWS Lambda
-author: dpo
+author: Daniel Polombo
 description: Deploy python code to AWS Lambda
 inputs:
   function_name:
