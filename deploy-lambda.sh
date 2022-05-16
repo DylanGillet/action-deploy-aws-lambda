@@ -96,7 +96,7 @@ show_environment() {
 	echo "Lambda layers: ${INPUT_LAYERS}"
 }
 
-echo "dpolombo/action-deploy-aws-lambda@v1.7"
+echo "dpolombo/action-deploy-aws-lambda - composite edition"
 aws --version
 show_environment
 deploy_or_update_function
