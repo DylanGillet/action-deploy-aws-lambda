@@ -50,6 +50,7 @@ update_function() {
 			echo "Waiting for function configuration update to complete ..."
             sleep 2
         fi
+	sleep 10
     done	
 	aws lambda update-function-code --function-name "${INPUT_FUNCTION_NAME}" --zip-file fileb://code.zip
     RETCODE=$((RETCODE+$?))
